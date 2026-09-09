@@ -16,28 +16,25 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
+			vim.lsp.enable("luals", {
 				capabilities = capabilities,
 			})
-			lspconfig.clangd.setup({
+			vim.lsp.enable("clangd", {
 				capabilities = capabilities,
 			})
-			lspconfig.cmake.setup({
+			vim.lsp.enable("lsp", "cmake", {
 				capabilities = capabilities,
 			})
-			lspconfig.rust_analyzer.setup({
+			vim.lsp.enable("rust_analyzer", {
 				capabilities = capabilities,
 			})
-			lspconfig.pyright.setup({
+			vim.lsp.enable("pyright", {
 				capabilities = capabilities,
 			})
-			lspconfig.zls.setup({
+			vim.lsp.enable("zls", {
 				capabilities = capabilities,
 			})
-			lspconfig.jsonls.setup({
+			vim.lsp.enable("jsonls", {
 				capabilities = capabilities,
 			})
 
